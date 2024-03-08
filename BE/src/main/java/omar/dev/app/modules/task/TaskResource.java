@@ -44,7 +44,7 @@ public class TaskResource {
 
     @PostMapping("changeStatus")
     public Task changeStatus(@RequestBody Task task) throws Exception {
-        System.out.println(task.);
+        System.out.println(task);
         return this.taskService.changeStatus(task);
     }
 
