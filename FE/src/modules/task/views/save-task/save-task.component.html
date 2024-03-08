@@ -1,0 +1,61 @@
+<fa-icon
+    icon="plus"
+    data-bs-toggle="modal"
+    data-bs-target="#taskModal"
+    class="btn btn-outline-primary"
+>
+</fa-icon>
+
+<div
+    class="modal fade"
+    id="taskModal"
+    tabindex="-1"
+    aria-labelledby="taskModalLabel"
+    aria-hidden="true"
+>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="taskModalLabel">
+                    <fa-icon icon="edit"></fa-icon> {{ (!currentTask.id ? "task.add" : "task.edit") | translate }}
+                </h5>
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                    id="btn-clonse"
+                >
+                </button>
+            </div>
+            <form [formGroup]="taskForm" (ngSubmit)="saveTask()">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="row">
+                            <label for="taskDate" id="taskDate">Date</label>
+                        </div>
+                        <div class="row">
+                            <input class="form-control m-2" type="date" name="taskDate" id="taskDate" formControlName="date">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="row">
+                            <label for="description" id="description">Description</label>
+                        </div>
+                        <div class="row">
+                            <input class="form-control m-2" type="text" name="description" id="description" formControlName="description">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        {{ "cancel" | translate }}
+                    </button>
+                    <button type="submit" class="btn btn-primary" [disabled]="taskForm.invalid">
+                        {{ (!currentTask.id ? "add" : "edit") | translate }}
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

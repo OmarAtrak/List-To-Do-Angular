@@ -1,0 +1,11 @@
+<div class="content">
+  <div class="d-flex justify-content-end mt-4 me-5">
+    <span>
+      <select class="form-select" name="lang" id="lang" (change)="changeLang($event)">
+        <option value="en" [selected]="currentLang.split('-')[0] === 'en'">en-US</option>
+        <option value="fr" [selected]="currentLang.split('-')[0] === 'fr'">fr-FR</option>
+      </select>
+    </span>
+  </div>
+</div>
+<router-outlet></router-outlet>

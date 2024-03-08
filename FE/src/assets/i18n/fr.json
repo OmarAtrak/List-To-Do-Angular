@@ -1,0 +1,14 @@
+{
+    "add": "Ajouter",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "cancel": "Annuler",
+    "tasks": "Tâches",
+    "task": {
+        "model": "Tâche",
+        "status": "Statut",
+        "add": "Ajouter Task",
+        "edit": "Modifier Task",
+        "delete": "Supprimer Task"
+    }
+}

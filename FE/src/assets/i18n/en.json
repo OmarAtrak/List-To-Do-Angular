@@ -1,0 +1,14 @@
+{
+    "add": "Add",
+    "edit": "Edit",
+    "delete": "Delete",
+    "cancel": "Cancel",
+    "tasks": "Tasks",
+    "task": {
+        "model": "Task",
+        "status": "Status",
+        "add": "Add Task",
+        "edit": "Edit Task",
+        "delete": "Delete Task"
+    }
+}

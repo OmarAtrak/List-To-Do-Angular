@@ -1,0 +1,48 @@
+<div class="main d-flex justify-content-center mt-5">
+    <div class="card w-50">
+        <div class="card-header bg-light d-flex justify-content-between">
+            <h4><fa-icon icon="list-check"></fa-icon> {{ "tasks" | translate }}</h4>
+            <app-add-task (isTaskSaved)="refreshTasks"></app-add-task>
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="col">Date</th>
+                        <th class="col">Description</th>
+                        <th class="col">{{ "task.status" | translate }}</th>
+                        <td class="col"></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let task of tasks">
+                        <td class="col">
+                            {{ frenchDate(task.date) }}
+                        </td>
+                        <td class="col">
+                            {{ task.description }}
+                        </td>
+                        <td class="col">
+                            <input
+                                class="form-check-input px-3 pt-4"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                                [checked]="task.isDone"
+                                (change)="changeStatus(task)"
+                            >
+                        </td>
+                        <td class="col">
+                            <span class="btn btn-sm bg-warning p-1 me-1">
+                                <fa-icon icon="edit" class="text-white"></fa-icon>
+                            </span>
+                            <span class="btn btn-sm bg-danger p-1">
+                                <fa-icon icon="trash-alt" class="text-white"></fa-icon>
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
